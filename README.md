@@ -1,4 +1,4 @@
-# ECS Fargate Terraform Template
+# AWS Terraform Modules
 
 ### Terraform state file / Remote backend
 

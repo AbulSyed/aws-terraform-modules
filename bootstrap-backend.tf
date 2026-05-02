@@ -1,8 +1,8 @@
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "template-terraform-state-588738611864"
+  bucket = "example-terraform-state-588738611864"
 
   tags = {
-    Name        = "Template Terraform State Bucket"
+    Name        = "Example Terraform State Bucket"
     Environment = "shared"
   }
 }
