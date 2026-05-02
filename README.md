@@ -6,3 +6,7 @@ Terraform state file is stored in AWS S3. Since state files contains sensitive i
 
 - `bootstrap-backend.tf` - creation of S3 with versioning, encryption & blocking public access.
 - `backend.tf` - configuring terraform to use S3 as remote backend
+
+### ECR
+
+Docker images are stored in AWS ECR.
