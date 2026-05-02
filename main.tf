@@ -1,6 +1,6 @@
 module "ecr" {
   source  = "./modules/ecr"
-  name    = "template"
-  service = "template"
+  name    = "example"
+  service = "example"
   env     = "dev"
 }
