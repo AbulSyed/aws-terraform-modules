@@ -104,6 +104,7 @@ AWS Systems Manager > Parameter Store is used to store non-sensitive values.
 ```hcl
 module "ssm" {
   source = "git::https://github.com/AbulSyed/aws-terraform-modules.git//ssm"
+
   ssm_parameters = local.ssm_parameters
 }
 ```
