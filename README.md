@@ -86,13 +86,33 @@ Used to direct traffic flow.
 
 ## S3
 
-S3 provide cloud storage.
+AWS S3 provides cloud storage.
 
 ```hcl
 module "vpc" {
   source = "git::https://github.com/AbulSyed/aws-terraform-modules.git//s3"
 
-  bucket = "state-bucket-123"
+  bucket      = "state-bucket-123"
   bucket_name = "Terraform State Bucket"
+}
+```
+
+## SSM
+
+AWS Systems Manager > Parameter Store is used to store non-sensitive values.
+
+```hcl
+module "ssm" {
+  source = "git::https://github.com/AbulSyed/aws-terraform-modules.git//ssm"
+
+  ssm_parameters = local.ssm_parameters
+}
+```
+
+```hcl
+locals {
+  ssm_parameters = {
+    "/service/postgres_user" : "pg_user"
+  }
 }
 ```
