@@ -83,3 +83,16 @@ Allows resources in a private subnet to access the internet.
 ### Route tables
 
 Used to direct traffic flow.
+
+## S3
+
+S3 provide cloud storage.
+
+```hcl
+module "vpc" {
+  source = "git::https://github.com/AbulSyed/aws-terraform-modules.git//s3"
+
+  bucket = "state-bucket-123"
+  bucket_name = "Terraform State Bucket"
+}
+```
