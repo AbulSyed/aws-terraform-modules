@@ -116,3 +116,39 @@ locals {
   }
 }
 ```
+
+Access and use value by:
+
+```hcl
+data "aws_ssm_parameter" "postgres_user" {
+  name = "/locked-out/postgres_user"
+}
+```
+
+```hcl
+value = data.aws_ssm_parameter.postgres_user.value
+```
+
+## ASM
+
+Amazon Secrets Manager used to store sensitive values.
+
+```hcl
+module "asm" {
+  source = "git::https://github.com/AbulSyed/aws-terraform-modules.git//asm"
+
+  secrets = local.secrets
+}
+```
+
+```hcl
+locals {
+  secrets = jsondecode(file("secrets.json"))
+}
+```
+
+```json
+{
+  "MY_SECRET": "secret-value"
+}
+```
