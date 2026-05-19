@@ -146,3 +146,9 @@ locals {
   secrets = jsondecode(file("secrets.json"))
 }
 ```
+
+```json
+{
+  "MY_SECRET": "secret-value"
+}
+```
