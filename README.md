@@ -117,7 +117,7 @@ locals {
 }
 ```
 
-Access and use value by:
+Access and use values by:
 
 ```hcl
 data "aws_ssm_parameter" "postgres_user" {
@@ -150,5 +150,36 @@ locals {
 ```json
 {
   "MY_SECRET": "secret-value"
+}
+```
+
+Access and use values by:
+
+```hcl
+data "aws_secretsmanager_secret" "postgres_secret" {
+  name = "MY_SECRET"
+}
+
+data "aws_secretsmanager_secret_version" "postgres_secret_value" {
+  secret_id = data.aws_secretsmanager_secret.postgres_secret.id
+}
+```
+
+```hcl
+value = data.aws_secretsmanager_secret.postgres_secret.arn
+  
+value = data.aws_secretsmanager_secret_version.postgres_secret_value.secret_string
+```
+
+## CloudWatch
+
+```hcl
+module "auth_cloudwatch" {
+  source = "git::https://github.com/AbulSyed/aws-terraform-modules.git//cloudwatch"
+
+  cluster_name       = "cluster-name"
+  service            = "auth"
+  log_retention_days = 5
+  env                = "dev"
 }
 ```
