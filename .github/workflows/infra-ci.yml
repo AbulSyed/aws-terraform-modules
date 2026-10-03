@@ -18,5 +18,4 @@ jobs:
           terraform_wrapper: false
 
       - name: Terraform lint
-        working-directory: infra
         run: terraform fmt -recursive -check -diff
