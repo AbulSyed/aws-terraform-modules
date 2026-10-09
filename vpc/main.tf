@@ -14,7 +14,7 @@ resource "aws_subnet" "public_subnets" {
   availability_zone = each.value.az
 
   tags = {
-    Name = "Locked Out Public ${each.key}"
+    Name = "${var.project_name} Public ${each.key}"
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "private_subnets" {
   availability_zone = each.value.az
 
   tags = {
-    Name = "Locked Out Private ${each.key}"
+    Name = "${var.project_name} Private ${each.key}"
   }
 }
 
