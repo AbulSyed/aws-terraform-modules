@@ -25,6 +25,7 @@ module "vpc" {
   source = "git::https://github.com/AbulSyed/aws-terraform-modules.git//vpc"
 
   vpc_name                  = "My VPC"
+  project_name              = "Project"
   vpc_cidr                  = "10.0.0.0/16"
   public_subnets            = local.public_subnets
   private_subnets           = local.private_subnets
