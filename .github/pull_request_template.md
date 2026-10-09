@@ -5,4 +5,4 @@
 ## Checklist
 
 - [ ] I've reviewed my own code
-- [ ] `terraform fmt` passes locally
+- [ ] I've ran `terraform fmt -recursive`
