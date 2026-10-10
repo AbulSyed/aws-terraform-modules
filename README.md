@@ -90,7 +90,7 @@ Used to direct traffic flow.
 AWS S3 provides cloud storage.
 
 ```hcl
-module "vpc" {
+module "s3" {
   source = "git::https://github.com/AbulSyed/aws-terraform-modules.git//s3"
 
   bucket      = "state-bucket-123"
